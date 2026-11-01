@@ -2,42 +2,31 @@
 ICON=fa-solid fa-server
 ROUTE=connect
 SHORT=Connect
-TITLE=Connect to osuNoLimits
+TITLE=Connect to osu!Destiny
 NAVBAR=true
 FOOTER=false
 BEHINDLOGIN=false
 -->
-### 1. The devserver method
+### How to connect
 
-1. Create a osu! shortcut
-2. Right-Click it
-3. Select propeties
+1. Create an osu! shortcut (right-click `osu!.exe` → Send to → Desktop, or copy the existing shortcut).
+2. Right-click the shortcut and select **Properties**.
+3. In the **Target** field, after the path to osu!, add the devserver flag:
 
-Enter for target after the path for osu! ` -devserver osunolimits.dev`
-
-<input class="form-control" type="readonly" id="dev" value=" -devserver osunolimits.dev"></input>
+<input class="form-control" type="readonly" id="dev" value=" -devserver osudestiny.xyz"></input>
 
 <a class="btn btn-info" onclick="copydev()">Copy devserver</a>
 
-### 2. OLL Launcher
+4. Launch osu! from that shortcut, then **register in-game or on the website** with a new username and password.
 
-osu-server-list Launcher powered by <a href="https://osu-server-list.com/launcher">https://osu-server-list.com</a>
-
-<a class="btn btn-info" target="_blank" href="https://osu-server-list.com/launcher">Download</a>
+> Note: if osu! runs a "force repair", it relaunches in updater mode and drops the `-devserver` flag (sending you back to official osu!). Just start again from your shortcut.
 
 <script>
     function copydev() {
         var copyText = document.getElementById("dev");
-
-        // Select the text field
         copyText.select();
-        copyText.setSelectionRange(0, 99999); // For mobile devices
-
-        // Copy the text inside the text field
+        copyText.setSelectionRange(0, 99999);
         navigator.clipboard.writeText(copyText.value);
-
-        // Alert the copied text
-        alert("Copied the text: " + copyText.value);
+        alert("Copied: " + copyText.value);
     }
 </script>
-Do you still have issues? visit out <a href="https://discord.gg/UMCfgKSb5h">Discord</a>
